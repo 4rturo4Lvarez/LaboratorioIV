@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="city.component.css" />
+
+<div class="datos">
+<h2>Ingresar Ciudad</h2>
+    <form #cityForm="ngForm" (ngSubmit)="addCity(cityForm)">
+        <input type="hidden" name="_id" #id="ngModel" [(ngModel)]="selectedCity._id">
+        <div >
+            <input type="text" name="nombre" #alcalde="ngModel" [(ngModel)]="selectedCity.nombre" placeholder="Ingrese nombre de la ciudad" style="width:15%">
+        </div>
+        <div>
+            <input type="text" name="alcalde" #alcalde="ngModel" [(ngModel)]="selectedCity.alcalde" placeholder="Ingrese nombre del alcalde" style="width:15%">
+        </div>
+        <div>
+            <input type="text" name="habitantes" #habitantes="ngModel" [(ngModel)]="selectedCity.habitantes" placeholder="Ingrese número de habitantes" style="width:15%">
+        </div>
+        <div>
+            <button class="button_input">Enviar</button>
+            <button class="button_input" (click)="resetForm(cityForm)">Borrar</button>
+        </div>
+    </form>
+
+</div>
+
+<h3>Tabla de ciudades</h3>
+
+<p-table [value]="cities" styleClass="p-datatable-gridlines" [tableStyle]="{'min-width': '50rem', 'background-color': ''}">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:5%; background-color: rgb(70, 24, 91); color: rgb(246, 246, 250);">N°</th>
+            <th style="width:10%; background-color: rgb(70, 24, 91); color: rgb(246, 246, 250);">Ciudad</th>
+            <th style="width:20%; background-color: rgb(70, 24, 91); color: rgb(246, 246, 250);">Nombre de Alcalde</th>
+            <th style="width:20%; background-color: rgb(70, 24, 91); color: rgb(246, 246, 250);">Habitantes</th>
+            <th style="width:8%; background-color: rgb(70, 24, 91); color: rgb(246, 246, 250);">Ajustes</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-i="rowIndex" let-city>
+        <tr>
+            <td> {{ i + 1 }} </td>
+            <td> {{ city.nombre }} </td>
+            <td> {{ city.alcalde }} </td>
+            <td> {{ city.habitantes }} </td>
+            <td><button class="button_table" pButton type="button" icon="pi pi-user-edit" (click)="editCity(city)"></button><button class="button_table" pButton type="button" icon="pi pi-trash" (click)="deleteCity(city)"></button></td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <span class="p-buttonset">
+            <button pButton pRiple icon="pi pi-check" class="p-button-rounded p-button-succes p-button-text" (click)="save()"></button>
+            <button pButton pRiple icon="pi pi-times" class="p-button-rounded p-button-danger p-button-text" (click)="delete()"></button>
+        </span>
+    </ng-template>
+</p-table>

@@ -1,0 +1,55 @@
+h2 {
+    color: blue;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+input {
+    border: 3px solid rgb(40, 47, 147);
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(182, 209, 252, 0.568);
+    margin-bottom: 8px;
+}
+
+h3 {
+    color: blue;
+    margin-left: 10px;
+}
+
+.button_input {
+    border: 3px solid rgb(8, 2, 47);
+    padding: 8px;
+    margin-left: 28px;
+    background-color: rgb(30, 123, 167);
+    color: rgb(246, 246, 250);  
+}
+
+.button_table {
+    border: 3px solid rgb(42, 9, 56);
+    padding: 8px;
+    margin: 5px;
+    background-color: rgb(123, 79, 234);
+    color: rgb(246, 246, 250);  
+}
+
+td {
+    border: 3px solid rgb(42, 9, 56);
+    text-align: center;
+    align-content: center;
+    background-color: rgba(218, 204, 255, 0.601);
+    color: rgb(42, 9, 56);;
+}
+
+.encabezado {
+    width: 20%;
+    color: rgba(150, 113, 253, 0.601);
+}
+
+form {
+    margin: 10px;
+}
+
+.datos {
+    align-items: center;
+}
